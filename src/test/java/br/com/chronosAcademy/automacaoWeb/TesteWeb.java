@@ -1,6 +1,8 @@
 package br.com.chronosAcademy.automacaoWeb;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,21 +11,31 @@ import static org.junit.Assert.*;
 
 public class TesteWeb {
 
-    @Test
-    public void primeiroTeste(){
+    ChromeDriver driver; //Podemos dar qualquer nome ao objeto
+
+    @Before
+    public void inicializaTeste(){
         WebDriverManager.chromedriver().setup();
-        ChromeDriver driver; //Podemos dar qualquer nome ao objeto
 
         driver = new ChromeDriver(); //Abrindo o Chrome
         driver.manage().window().maximize();  //Maximizando a tela
         driver.get("https://www.chronosacademy.com.br");
+    }
+
+    @Test
+    public void primeiroTeste(){
+
         String xpathTitulo = "/html/body/div/div/div/div/div/section[2]/div[3]/div/div/div/div/div[1]/div/h4";
         WebElement txtTitulo = driver.findElement(By.xpath(xpathTitulo)); //Tipo do txtTitulo é o WebElement
         String titulo = txtTitulo.getText();
         assertEquals("Porque Tempo É Conhecimento", titulo);
 
-        driver.close();
-
-
     }
+
+    @After
+    public void finalizaTeste(){
+        driver.quit();
+    }
+
+
 }
