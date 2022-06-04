@@ -8,6 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -45,12 +46,12 @@ public class Driver {
         driver.manage().window().maximize();  //Maximizando a tela
     }
 
-    public void static visibilityOf(WebElement element){
-        wait.until(ExpectedCondition.visibilityOf(element));
+    public static void visibilityOf(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void static invisibilityOf(WebElement element){
-        wait.until(ExpectedCondition.invisibilityOf(element));
+    public static void invisibilityOf(WebElement element){
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
     public static WebDriver getDriver(){
         return driver;
