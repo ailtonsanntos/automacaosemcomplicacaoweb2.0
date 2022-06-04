@@ -1,10 +1,10 @@
-#language:pt
+#language: pt
 Funcionalidade: Login
 
   Contexto:
     Dado que a modal esteja sendo exibida
 
-  Cenario: Fechar a modal ao clicar fora da mesma
+  Esquema do Cenário: Fechar a modal ao clicar fora da mesma
     Quando for realizado um clique fora da modal
     Entao a janela modal deve ser fechada
 
@@ -25,9 +25,9 @@ Funcionalidade: Login
     Entao deve ser possivel logar no sistema
 
     Exemplos:
-      | identificacao       | login   | password | remember |
-      | todos os campos     | chronos | senha    | true     |
-      | campos obrigatorios | chronos | senha    | false    |
+      | identificacao       | login    | password | remember |
+      | todos os campos     | asanntos | Senha123 | true     |
+      | campos obrigatorios | asanntos | Senha123 | false    |
 
   Esquema do Cenario: Realizar login com <identificacao>
     Quando os campos de login forem preenchidos da seguinte forma
@@ -39,8 +39,8 @@ Funcionalidade: Login
 
     Exemplos:
       | identificacao    | login    | password | remember |
-      | usuario invalido | invalido | senha    | true     |
-      | senha invalida   | chronos  | invalido | true     |
+      | usuario invalido | invalido | Senha123 | true     |
+      | senha invalida   | asanntos | invalido | true     |
 
   Esquema do Cenario: Realizar login com <identificacao>
     Quando os campos de login forem preenchidos da seguinte forma
@@ -50,10 +50,9 @@ Funcionalidade: Login
     Entao o botao sign in deve permanecer desabilitado
 
     Exemplos:
-      | identificacao     | login   | password | remember |
-      | usuario em branco |         | senha    | false    |
-      | senha em branco   | chronos |          | false    |
-
+      | identificacao     | login    | password | remember |
+      | usuario em branco |          | Senha123 | false    |
+      | senha em branco   | asanntos |          | false    |
 
 
 

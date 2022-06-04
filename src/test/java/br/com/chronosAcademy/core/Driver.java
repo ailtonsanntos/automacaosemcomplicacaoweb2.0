@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class Driver {
-    private WebDriver driver;
+    private static WebDriver driver; // Static - Algo estático
 
     //Ele é construtor pq ele é public e tem o nome da classe
     public Driver(String navegador){
@@ -41,7 +41,7 @@ public class Driver {
 
     }
 
-    public WebDriver getDriver(){
+    public static WebDriver getDriver(){
         return driver;
     }
 }
