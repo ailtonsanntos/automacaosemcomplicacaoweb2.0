@@ -1,5 +1,6 @@
 package br.com.chronosAcademy.core;
 
+import br.com.chronosAcademy.enums.Browser;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,29 +19,26 @@ public class Driver {
     private static WebDriverWait wait;
 
     //Ele é construtor pq ele é public e tem o nome da classe
-    public Driver(String navegador){
+    public Driver(Browser navegador){
 
        switch (navegador){
-            case "chrome":
+           case CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(); //Abrindo o Chrome
                 break;
-            case "ie":
+           case IE:
                 WebDriverManager.iedriver().setup();
                 driver = new InternetExplorerDriver(); //Abrindo o Chrome
                 break;
-            case "firefox":
+           case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver(); //Abrindo o Chrome
                 break;
-            case "edge":
+           case EDGE:
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver(); //Abrindo o Chrome
                 break;
-            default:
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver(); //Abrindo o Chrome
-                break;
+
         }
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();  //Maximizando a tela
