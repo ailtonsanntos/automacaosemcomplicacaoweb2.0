@@ -10,7 +10,7 @@ public class LoginMap {
     public WebElement btnLogin;
     @FindBy(css = ".closeBtn")
     public WebElement btnFechar;
-    @FindBy(css = "PopUp")
+    @FindBy(css = ".PopUp")
     public WebElement divFecharModal;
     @FindBy(css = "input[name = 'username']")
     public WebElement inpUserName;
@@ -22,5 +22,6 @@ public class LoginMap {
     public WebElement inpRemember;
     @FindBy(linkText = "CREATE NEW ACCOUNT")
     public WebElement linkCreateAccount;
-
+    @FindBy(css = ".loader")
+    public WebElement divLoader;
 }
