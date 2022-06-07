@@ -58,4 +58,8 @@ public class LoginPage {
         Driver.invisibilityOf(loginMap.btnFechar);
     }
 
+    public void aguardaLoader(){
+        Driver.atributeChance(loginMap.divLoader, "display", "none");
+    }
+
 }
